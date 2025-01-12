@@ -24,7 +24,7 @@ matches:
       - name: "output"
         type: shell
         params:
-          cmd: "trans -b -t '{{input.target}}' '{{input.text}}'"
+          cmd: "trans -b -t '{{input.target}}' '{{input.text}}' | fribidi --rtl"
           shell: wsl
 
   - trigger: "::etrans"
@@ -60,7 +60,7 @@ matches:
       - name: "output"
         type: shell
         params:
-          cmd: "trans -b -s '{{input.source}}' -t '{{input.target}}' '{{input.text}}'"
+          cmd: "trans -b -s '{{input.source}}' -t '{{input.target}}' '{{input.text}}' | fribidi --rtl"
           shell: wsl
 
 global_vars:
